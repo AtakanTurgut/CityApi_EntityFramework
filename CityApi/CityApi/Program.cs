@@ -1,4 +1,6 @@
 using CityApi.Data;
+using CityApi.Data.Abstract;
+using CityApi.Data.Concrete;
 using CityApi.Infrastructures.Extensions;
 using CityApi.Services.CityService;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);   // AutoMapper
 
 builder.Services.AddScoped<ICityService, CityManager>();    // ICityService <-- CityManager
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 
 var app = builder.Build();
 
