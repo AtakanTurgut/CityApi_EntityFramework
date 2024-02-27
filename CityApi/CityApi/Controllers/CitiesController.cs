@@ -22,7 +22,7 @@ namespace CityApi.Controllers
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<CityDto>>>> GetAllCityAsync() 
         {
-            var cities = await _cityService.GetAllCityAsync();
+            var cities = await _cityService.TGetAllCityAsync();
 
             return Ok(cities);
         }
@@ -30,7 +30,7 @@ namespace CityApi.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ServiceResponse<CityDto>>> GetOneCityByIdAsync(int id)
         {
-            var city = await _cityService.GetOneCityByIdAsync(id);
+            var city = await _cityService.TGetOneCityByIdAsync(id);
 
             return Ok(city);    
         }
@@ -39,7 +39,7 @@ namespace CityApi.Controllers
         [HttpPost]
         public async Task<ActionResult<ServiceResponse<List<CityDto>>>> CreateOneCityAsync(CityDtoForCreate cityDtoForCreate)
         {
-            var city = await _cityService.CreateOneCityAsync(cityDtoForCreate);
+            var city = await _cityService.TCreateOneCityAsync(cityDtoForCreate);
 
             return Ok(city);
         }
@@ -48,7 +48,7 @@ namespace CityApi.Controllers
         [HttpPut]
         public async Task<ActionResult<ServiceResponse<CityDto>>> UpdateOneCityAsync(CityDtoForUpdate cityDtoForUpdate)
         {
-            var response = await _cityService.UpdateOneCityAsync(cityDtoForUpdate);
+            var response = await _cityService.TUpdateOneCityAsync(cityDtoForUpdate);
 
             if (response.Data == null)
                 return NotFound(response);
@@ -59,7 +59,7 @@ namespace CityApi.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<ServiceResponse<List<CityDto>>>> DeleteOneCityAsync(int id)
         {
-            var response = await _cityService.DeleteOneCityAsync(id);
+            var response = await _cityService.TDeleteOneCityAsync(id);
 
             if (response.Data == null)
                 return NotFound(response);

@@ -2,97 +2,100 @@
 using CityApi.Core;
 using CityApi.Core.Dtos.City;
 using CityApi.Core.Entities;
+using CityApi.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CityApi.Services.CityService
 {
     public class CityManager : ICityService
     {
-        private static List<City> cities = new List<City>
-        {
-            new City(),
-            new City { Id = 1, Name = "Isparta", Region = Core.Enums.RegionOfCity.Akdeniz }
-        };
-
         private readonly IMapper _mapper;
+        private readonly DataContext _context;
 
-        public CityManager(IMapper mapper)
+		public CityManager(IMapper mapper, DataContext context)
+		{
+			_mapper = mapper;
+			_context = context;
+		}
+
+		public async Task<ServiceResponse<List<CityDto>>> TGetAllCityAsync()
         {
-            _mapper = mapper;
+            var response = new ServiceResponse<List<CityDto>>();
+            var dbCities = await _context.Cities.ToListAsync();
+            response.Data = dbCities.Select(c => _mapper.Map<CityDto>(c)).ToList();
+
+            return response;
         }
 
-        public async Task<ServiceResponse<List<CityDto>>> GetAllCityAsync()
+        public async Task<ServiceResponse<CityDto>> TGetOneCityByIdAsync(int id)
         {
-            var serviceResponse = new ServiceResponse<List<CityDto>> 
-            { 
-                Data = cities.Select(c => _mapper.Map<CityDto>(c)).ToList()
-            };
-            return serviceResponse;
+            var response = new ServiceResponse<CityDto>();
+            var dbCity = await _context.Cities.FirstOrDefaultAsync(x => x.Id == id);
+
+			response.Data = _mapper.Map<CityDto>(dbCity);
+
+            return response;
         }
 
-        public async Task<ServiceResponse<CityDto>> GetOneCityByIdAsync(int id)
+        public async Task<ServiceResponse<List<CityDto>>> TCreateOneCityAsync(CityDtoForCreate cityDtoForCreate)
         {
-            var serviceResponse = new ServiceResponse<CityDto>();
-            var city = cities.FirstOrDefault(x => x.Id == id);
-
-            serviceResponse.Data = _mapper.Map<CityDto>(city);
-
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse<List<CityDto>>> CreateOneCityAsync(CityDtoForCreate cityDtoForCreate)
-        {
-            var serviceResponse = new ServiceResponse<List<CityDto>>();
+            var response = new ServiceResponse<List<CityDto>>();
             City city = _mapper.Map<City>(cityDtoForCreate);
-            city.Id = cities.Max(x => x.Id) + 1;
 
-            cities.Add(city);
+            _context.Cities.Add(city);
+            await _context.SaveChangesAsync();
 
-            serviceResponse.Data = cities.Select(c => _mapper.Map<CityDto>(c)).ToList();
+			response.Data = await _context.Cities.Select(c => _mapper.Map<CityDto>(c)).ToListAsync();
 
-            return serviceResponse;
+            return response;
         }
 
-        public async Task<ServiceResponse<CityDto>> UpdateOneCityAsync(CityDtoForUpdate cityDtoForUpdate)
+        public async Task<ServiceResponse<CityDto>> TUpdateOneCityAsync(CityDtoForUpdate cityDtoForUpdate)
         {
-            ServiceResponse<CityDto> serviceResponse = new ServiceResponse<CityDto>();
+            ServiceResponse<CityDto> response = new ServiceResponse<CityDto>();
 
             try
             {
-                City city = cities.FirstOrDefault(c => c.Id == cityDtoForUpdate.Id);
+                City city = await _context.Cities.FirstOrDefaultAsync(c => c.Id == cityDtoForUpdate.Id);
 
                 city.Name = cityDtoForUpdate.Name;
                 city.Population = cityDtoForUpdate.Population;
                 city.Region = cityDtoForUpdate.Region;
 
-                serviceResponse.Data = _mapper.Map<CityDto>(city);
+                await _context.SaveChangesAsync();
+
+				response.Data = _mapper.Map<CityDto>(city);
             }
             catch (Exception ex)
             {
-                serviceResponse.Success = false;
-                serviceResponse.Message = ex.Message;
+				response.Success = false;
+				response.Message = ex.Message;
             }
 
-            return serviceResponse;
+            return response;
         }
 
-        public async Task<ServiceResponse<List<CityDto>>> DeleteOneCityAsync(int id)
+        public async Task<ServiceResponse<List<CityDto>>> TDeleteOneCityAsync(int id)
         {
-            ServiceResponse<List<CityDto>> serviceResponse = new ServiceResponse<List<CityDto>>();
+            ServiceResponse<List<CityDto>> response = new ServiceResponse<List<CityDto>>();
 
             try
             {
-                City city = cities.First(c => c.Id == id);
+                City city = await _context.Cities.FirstAsync(c => c.Id == id);
 
-                cities.Remove(city);
-                serviceResponse.Data = cities.Select(c => _mapper.Map<CityDto>(c)).ToList();
+                _context.Cities.Remove(city);
+
+                await _context.SaveChangesAsync();
+
+				response.Data = await _context.Cities.Select(c => _mapper.Map<CityDto>(c)).ToListAsync();
             }
             catch (Exception ex)
             {
-                serviceResponse.Success = false;
-                serviceResponse.Message = ex.Message;
+				response.Success = false;
+				response.Message = ex.Message;
             }
 
-            return serviceResponse;
+            return response;
         }
 
     }

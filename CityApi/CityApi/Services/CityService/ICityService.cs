@@ -6,11 +6,11 @@ namespace CityApi.Services.CityService
 {
     public interface ICityService
     {
-        Task<ServiceResponse<List<CityDto>>> GetAllCityAsync();
-        Task<ServiceResponse<CityDto>> GetOneCityByIdAsync(int id);
+        Task<ServiceResponse<List<CityDto>>> TGetAllCityAsync();
+        Task<ServiceResponse<CityDto>> TGetOneCityByIdAsync(int id);
 
-        Task<ServiceResponse<List<CityDto>>> CreateOneCityAsync(CityDtoForCreate cityDtoForCreate);
-        Task<ServiceResponse<CityDto>> UpdateOneCityAsync(CityDtoForUpdate cityDtoForUpdate);
-        Task<ServiceResponse<List<CityDto>>> DeleteOneCityAsync(int id);
+        Task<ServiceResponse<List<CityDto>>> TCreateOneCityAsync(CityDtoForCreate cityDtoForCreate);
+        Task<ServiceResponse<CityDto>> TUpdateOneCityAsync(CityDtoForUpdate cityDtoForUpdate);
+        Task<ServiceResponse<List<CityDto>>> TDeleteOneCityAsync(int id);
     }
 }
