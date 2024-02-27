@@ -9,5 +9,7 @@ namespace CityApi.Core.Entities
         public int Population { get; set; } = 1056332;
 
         public RegionOfCity Region { get; set; } = RegionOfCity.Ege;
+
+        public User? User { get; set; }
     }
 }
