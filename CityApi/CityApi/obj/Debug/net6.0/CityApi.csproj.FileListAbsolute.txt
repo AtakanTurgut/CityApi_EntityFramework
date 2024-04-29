@@ -182,3 +182,10 @@ C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\obj\Debug\net6.0\refint
 C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\obj\Debug\net6.0\CityApi.pdb
 C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\obj\Debug\net6.0\CityApi.genruntimeconfig.cache
 C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\obj\Debug\net6.0\ref\CityApi.dll
+C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\bin\Debug\net6.0\Scrutor.dll
+C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Excalibur\Desktop\CityApi_MySql\CityApi\CityApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll

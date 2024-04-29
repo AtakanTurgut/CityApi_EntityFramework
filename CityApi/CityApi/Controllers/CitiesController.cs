@@ -2,11 +2,13 @@
 using CityApi.Core.Dtos.City;
 using CityApi.Core.Entities;
 using CityApi.Services.CityService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityApi.Controllers
 {
+    [Authorize]
     [Route("api/cities")]
     [ApiController]
     public class CitiesController : ControllerBase
@@ -19,6 +21,7 @@ namespace CityApi.Controllers
         }
 
         // GET
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<CityDto>>>> GetAllCityAsync() 
         {
@@ -27,6 +30,7 @@ namespace CityApi.Controllers
             return Ok(cities);
         }
 
+        [AllowAnonymous]
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ServiceResponse<CityDto>>> GetOneCityByIdAsync(int id)
         {

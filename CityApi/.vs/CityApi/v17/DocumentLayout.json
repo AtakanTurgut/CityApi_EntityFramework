@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|c:\\users\\excalibur\\desktop\\cityapi_mysql\\cityapi\\cityapi\\core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|solutionrelative:cityapi\\core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|c:\\users\\excalibur\\desktop\\cityapi_mysql\\cityapi\\cityapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|solutionrelative:cityapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|c:\\users\\excalibur\\desktop\\cityapi_mysql\\cityapi\\cityapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|solutionrelative:cityapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|c:\\users\\excalibur\\desktop\\cityapi_mysql\\cityapi\\cityapi\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|solutionrelative:cityapi\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|c:\\users\\excalibur\\desktop\\cityapi_mysql\\cityapi\\cityapi\\data\\concrete\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|solutionrelative:cityapi\\data\\concrete\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|c:\\users\\excalibur\\desktop\\cityapi_mysql\\cityapi\\cityapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9F437B9B-02F2-4610-92F7-C13C80CE1C70}|CityApi\\CityApi.csproj|solutionrelative:cityapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\Core\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "CityApi\\Core\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\Core\\Entities\\User.cs",
-              "RelativeToolTip": "CityApi\\Core\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAsAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\Program.cs",
+              "RelativeDocumentMoniker": "CityApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\Program.cs",
+              "RelativeToolTip": "CityApi\\Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T14:06:15.799Z",
+              "WhenOpened": "2024-04-29T14:25:32.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CitiesController.cs",
+              "DocumentMoniker": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\Controllers\\CitiesController.cs",
+              "RelativeDocumentMoniker": "CityApi\\Controllers\\CitiesController.cs",
+              "ToolTip": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\Controllers\\CitiesController.cs",
+              "RelativeToolTip": "CityApi\\Controllers\\CitiesController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T14:22:42.982Z",
               "EditorCaption": ""
             },
             {
@@ -52,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\appsettings.json",
               "RelativeDocumentMoniker": "CityApi\\appsettings.json",

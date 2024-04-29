@@ -19,6 +19,7 @@ Packages can be installed from the "[NuGet Gallery](https://www.nuget.org/packag
     PM> NuGet\Install-Package Microsoft.EntityFrameworkCore.Design -Version 6.0.25
 ```
 
+----
 
 - [MySql.Data.EntityFrameworkCore 6.10.9](https://www.nuget.org/packages/MySql.Data.EntityFrameworkCore/6.10.9)
 ```
@@ -28,3 +29,19 @@ Packages can be installed from the "[NuGet Gallery](https://www.nuget.org/packag
 ```
     PM> NuGet\Install-Package Pomelo.EntityFrameworkCore.MySql -Version 6.0.0
 ```
+
+----
+
+- [Microsoft.AspNetCore.Authentication.JwtBearer 6.0.25](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer/6.0.25)
+```
+    PM> NuGet\Install-Package Microsoft.AspNetCore.Authentication.JwtBearer -Version 6.0.25
+```
+
+- [Swashbuckle.AspNetCore.Filters 6.1.0](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Filters/6.1.0)
+```
+    PM> NuGet\Install-Package Swashbuckle.AspNetCore.Filters -Version 6.1.0
+```
+
+----
+mysql implementation 
+authentication and authorization
