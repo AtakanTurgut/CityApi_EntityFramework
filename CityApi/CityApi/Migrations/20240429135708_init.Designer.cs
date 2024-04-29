@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CityApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240227152937_addTable_User")]
-    partial class addTable_User
+    [Migration("20240429135708_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,7 +37,12 @@ namespace CityApi.Migrations
                     b.Property<int>("Region")
                         .HasColumnType("int");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Cities");
                 });
@@ -57,11 +62,26 @@ namespace CityApi.Migrations
                         .HasColumnType("longblob");
 
                     b.Property<string>("Username")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("CityApi.Core.Entities.City", b =>
+                {
+                    b.HasOne("CityApi.Core.Entities.User", "User")
+                        .WithMany("Cities")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CityApi.Core.Entities.User", b =>
+                {
+                    b.Navigation("Cities");
                 });
 #pragma warning restore 612, 618
         }

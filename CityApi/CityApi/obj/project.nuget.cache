@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zQTJHVeffWWtMPQkjoSQDB+n2H/B06yBhEV4DjNX92QsslDXN/1fFMqspAkWCewLghGLIDNgVzJpRLYXXhR/kg==",
+  "dgSpecHash": "H8eNiZ7Hp5v089mhLOT3h9VZOUQGoaXE9fpkta2pLt3vpwNn50CdNmpWQuhNuM1XITpuJvIej/f9FA1TV9r6nQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Excalibur\\Desktop\\CityApi\\CityApi\\CityApi\\CityApi.csproj",
+  "projectFilePath": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\CityApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Excalibur\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Excalibur\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

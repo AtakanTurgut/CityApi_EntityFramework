@@ -2441,11 +2441,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Excalibur\\Desktop\\CityApi\\CityApi\\CityApi\\CityApi.csproj",
+      "projectUniqueName": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\CityApi.csproj",
       "projectName": "CityApi",
-      "projectPath": "C:\\Users\\Excalibur\\Desktop\\CityApi\\CityApi\\CityApi\\CityApi.csproj",
+      "projectPath": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\CityApi.csproj",
       "packagesPath": "C:\\Users\\Excalibur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Excalibur\\Desktop\\CityApi\\CityApi\\CityApi\\obj\\",
+      "outputPath": "C:\\Users\\Excalibur\\Desktop\\CityApi_MySql\\CityApi\\CityApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2472,6 +2472,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2530,7 +2535,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

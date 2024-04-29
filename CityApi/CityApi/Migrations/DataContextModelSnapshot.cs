@@ -60,6 +60,7 @@ namespace CityApi.Migrations
                         .HasColumnType("longblob");
 
                     b.Property<string>("Username")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");

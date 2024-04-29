@@ -35,6 +35,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// Extensions - Auto Migrate
+app.ConfigureAndCheckMigration();
+
 app.MapControllers();
 
 app.Run();
