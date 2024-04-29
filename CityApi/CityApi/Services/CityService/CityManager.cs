@@ -58,10 +58,15 @@ namespace CityApi.Services.CityService
             var response = new ServiceResponse<List<CityDto>>();
             City city = _mapper.Map<City>(cityDtoForCreate);
 
+            city.User = await _context.Users.FirstOrDefaultAsync(x => x.Id == GetUserId());
+
             _context.Cities.Add(city);
             await _context.SaveChangesAsync();
 
-			response.Data = await _context.Cities.Select(c => _mapper.Map<CityDto>(c)).ToListAsync();
+			response.Data = await _context.Cities
+                .Where(x => x.User.Id == GetUserId())
+                .Select(c => _mapper.Map<CityDto>(c))
+                .ToListAsync();
 
             return response;
         }
