@@ -77,15 +77,25 @@ namespace CityApi.Services.CityService
 
             try
             {
-                City city = await _context.Cities.FirstOrDefaultAsync(c => c.Id == cityDtoForUpdate.Id);
+                var city = await _context.Cities
+                    .Include(c => c.User)
+                    .FirstOrDefaultAsync(c => c.Id == cityDtoForUpdate.Id);
 
-                city.Name = cityDtoForUpdate.Name;
-                city.Population = cityDtoForUpdate.Population;
-                city.Region = cityDtoForUpdate.Region;
+                if (city.User.Id == GetUserId())
+                {
+                    city.Name = cityDtoForUpdate.Name;
+                    city.Population = cityDtoForUpdate.Population;
+                    city.Region = cityDtoForUpdate.Region;
 
-                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
 
-				response.Data = _mapper.Map<CityDto>(city);
+                    response.Data = _mapper.Map<CityDto>(city);
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "Şehir Bulunamadı!";
+                }
             }
             catch (Exception ex)
             {
@@ -102,13 +112,24 @@ namespace CityApi.Services.CityService
 
             try
             {
-                City city = await _context.Cities.FirstAsync(c => c.Id == id);
+                City city = await _context.Cities
+                    .FirstOrDefaultAsync(c => c.Id == id && c.User.Id == GetUserId());
 
-                _context.Cities.Remove(city);
+                if (city != null)
+                {
+                    _context.Cities.Remove(city);
 
-                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
 
-				response.Data = await _context.Cities.Select(c => _mapper.Map<CityDto>(c)).ToListAsync();
+                    response.Data = await _context.Cities
+                        .Where(x => x.User.Id == GetUserId())
+                        .Select(c => _mapper.Map<CityDto>(c)).ToListAsync();
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = "Şehir Bulunamadı!";
+                }
             }
             catch (Exception ex)
             {
