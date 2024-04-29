@@ -8,6 +8,7 @@ namespace CityApi.Services.CityService
     {
         Task<ServiceResponse<List<CityDto>>> TGetAllCityAsync();
         Task<ServiceResponse<CityDto>> TGetOneCityByIdAsync(int id);
+        Task<ServiceResponse<List<CityDto>>> TGetAllCityByUserIdAsync();
 
         Task<ServiceResponse<List<CityDto>>> TCreateOneCityAsync(CityDtoForCreate cityDtoForCreate);
         Task<ServiceResponse<CityDto>> TUpdateOneCityAsync(CityDtoForUpdate cityDtoForUpdate);

@@ -39,6 +39,14 @@ namespace CityApi.Controllers
             return Ok(city);    
         }
 
+        [HttpGet("user")]
+        public async Task<ActionResult<ServiceResponse<List<CityDto>>>> GetAllCityByUserIdAsync()
+        {
+            var cities = await _cityService.TGetAllCityByUserIdAsync();
+
+            return Ok(cities);
+        }
+
         // POST
         [HttpPost]
         public async Task<ActionResult<ServiceResponse<List<CityDto>>>> CreateOneCityAsync(CityDtoForCreate cityDtoForCreate)

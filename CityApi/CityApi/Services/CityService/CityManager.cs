@@ -4,6 +4,7 @@ using CityApi.Core.Dtos.City;
 using CityApi.Core.Entities;
 using CityApi.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace CityApi.Services.CityService
 {
@@ -11,17 +12,32 @@ namespace CityApi.Services.CityService
     {
         private readonly IMapper _mapper;
         private readonly DataContext _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-		public CityManager(IMapper mapper, DataContext context)
+        public CityManager(IMapper mapper, DataContext context, IHttpContextAccessor httpContextAccessor)
 		{
 			_mapper = mapper;
 			_context = context;
-		}
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
 
 		public async Task<ServiceResponse<List<CityDto>>> TGetAllCityAsync()
         {
             var response = new ServiceResponse<List<CityDto>>();
             var dbCities = await _context.Cities.ToListAsync();
+            response.Data = dbCities.Select(c => _mapper.Map<CityDto>(c)).ToList();
+
+            return response;
+        }
+
+        public async Task<ServiceResponse<List<CityDto>>> TGetAllCityByUserIdAsync()
+        {
+            var response = new ServiceResponse<List<CityDto>>();
+            var dbCities = await _context.Cities
+                .Where(x => x.User.Id == GetUserId())
+                .ToListAsync();
             response.Data = dbCities.Select(c => _mapper.Map<CityDto>(c)).ToList();
 
             return response;
@@ -97,6 +113,5 @@ namespace CityApi.Services.CityService
 
             return response;
         }
-
     }
 }

@@ -1,5 +1,14 @@
 ## Used Packages
 
+```json
+{
+  "username": "atakan",
+  "password": "atakan"
+}
+```
+
+----
+
 Packages can be installed from the "[NuGet Gallery](https://www.nuget.org/packages/Microsoft.AspNet.Identity.Core)" with the help of the `Tools > NuGet Package Manager > Package Manager Console`.
 
 - [AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1](https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection)
@@ -43,5 +52,5 @@ Packages can be installed from the "[NuGet Gallery](https://www.nuget.org/packag
 ```
 
 ----
-mysql implementation 
-authentication and authorization
+
+mysql implementation - authentication and authorization
